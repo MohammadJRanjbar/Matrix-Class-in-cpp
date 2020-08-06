@@ -16,16 +16,67 @@ Matrix class must have the following member variables.
 size: Number of rows and columns of your matrix, packed in a 2-element array. This variable must be private.
 It must also have the following member functions.
 
-* getSize: This function returns a 2-element array representing size of the matrix.
+* **getSize**: This function returns a 2-element array representing size of the matrix.
 
 ``` c++
 std::array<size_t, 2> getSize();
 ```
-* det: This function must return a double representing determinant of the matrix. If the matrix is not in the square form, it must return 0 and print a proper message.
+* **det**: This function must return a double representing determinant of the matrix. If the matrix is not in the square form, it must return 0 and print a proper message.
 ``` c++
 double det(); 
 ```
-* inv: This function must return a matrix object representing inverse of the matrix. In the case the matrix not being square, you must print a proper message and return a matrix of all 0s with the same dimensions as the matrix.
+* **inv**: This function must return a matrix object representing inverse of the matrix. In the case the matrix not being square, you must print a proper message and return a matrix of all 0s with the same dimensions as the matrix.
 ``` c++
 Matrix inv();
+```
+* **T** : This function must return a matrix object representing the transpose of the matrix.
+``` c++
+Matrix T();
+```
+* **show**: This function displays the matrix in a beautiful way.
+* **delCol**: This function removes the given (i-th) column of the matrix. In addition, it must return the remaining matrix too.
+``` c++
+Matrix delCol(size_t i);
+```
+* **col**: This function returns the given (i-th) column of the matrix as a new matrix.
+``` c++
+Matrix col(size_t i);
+```
+* **save**: This function saves the matrix as a csv file with the given file name as its argument.
+``` c++
+void save(const char*);  
+```
+* **load**: This function loads a csv file into a matrix.
+``` c++
+void load(const char*);
+```
+In addition, you're supposed to implement the Matrix class such that the following sample codes work properly. variables a and b are Matrix objects.
+``` c++
+Matrix c {a + b};
+Matrix d {a.inv()*b};
+d[0][1] = 5;
+Matrix e {inv(a-b)};
+Matrix f {a * b.T()};
+f.show();
+```
+#Other Functions
+* **det**: This function gets a matrix and must return an optional double representing determinant of the given matrix. If the matrix is not in the square form, it must return 0 and print a proper message.
+``` c++
+std::optional<double> det(Matrix&); 
+```
+* **inv**: This function gets a matrix and must return an optional matrix object representing inverse of the given matrix. In the case the matrix not being square, you must print a proper message and make use of the optional to return nothing!
+``` c++
+std::optional<Matrix> inv(Matrix&);
+```
+* **transpose**: This function must return an optional matrix object representing the transpose of the matrix.
+``` c++
+std::optional<Matrix> transpose(Matrix&);
+```
+* **getData**: This function is very similar to the last homework. However, there are some differences! first of all, you have a second argument add_bias which is a bool and by default is true. In case it is true, it must add a column of 1s just like last homework as the first column of data. When it is false, your function must not add those 1s and it must simply import the data in the file. Note that you must not normalize your data in this function.
+``` c++
+std::vector<std::vector<double>> getData(const char* filename, bool add_bias=true);
+```
+* **findMinNoOfMultiplications**: This function must find the minimum number of required scalar multiplications in the so-called Matrix Chain Multiplication problem discussed in the TA class. You must use Dynamic Programming approach to do this.
+``` c++
+size_t findMinNoOfMultiplications(std::vector<Matrix>& v);
 ```
