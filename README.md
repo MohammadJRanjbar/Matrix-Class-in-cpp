@@ -7,5 +7,25 @@ Matrix class must have the following constructors.
 ``` c++
 Matrix(const Matrix& mat);
 Matrix(std::vector<std::vector<double>> data);
-Matrix (std::unique_ptr<std::unique_ptr<double[]>[]> data, size_t m, size_t n);
+Matrix(std::unique_ptr<std::unique_ptr<double[]>[]> data, size_t m, size_t n); where m and n are the number of rows and columns.
+Matrix (size_t m, size_t n, bool ones=true); where m and n are number of rows and columns. if ones flag is true, each element of the matrix must be 1. Otherwise, it must be 0.
+```
+Matrix class must have the following member variables.
+
+* data: Elements of your matrix. This variable must be private.
+size: Number of rows and columns of your matrix, packed in a 2-element array. This variable must be private.
+It must also have the following member functions.
+
+* getSize: This function returns a 2-element array representing size of the matrix.
+
+``` c++
+std::array<size_t, 2> getSize();
+```
+* det: This function must return a double representing determinant of the matrix. If the matrix is not in the square form, it must return 0 and print a proper message.
+``` c++
+double det(); 
+```
+* inv: This function must return a matrix object representing inverse of the matrix. In the case the matrix not being square, you must print a proper message and return a matrix of all 0s with the same dimensions as the matrix.
+``` c++
+Matrix inv();
 ```
