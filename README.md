@@ -83,9 +83,12 @@ size_t findMinNoOfMultiplications(std::vector<Matrix>& v);
 #Estimation Problem
 If you're here, congratulations! Now you have lots of abilities and power because you can do stuff with matrices! With your getData function, form the matrix X of previous students features. Each row of X is a 1 (just like last homework) and the 6 parameters of each student. After that, form the matrix y. y is actually a vector(column matrix) in which each row is the grade of a student.
 ![alt text](https://github.com/MohammadJRanjbar/Matrix-Class-in-cpp/blob/master/Formula/hw2f1.png?raw=true)
+
 ![alt text](https://github.com/courseworks/ap1398-2-hw2/blob/master/staff/hw2f3.png?raw=true)
+
 So from the last formula, you can and must find the best weights (w) for estimating grades.
 ![alt text](https://github.com/MohammadJRanjbar/Matrix-Class-in-cpp/blob/master/Formula/hw2f3.png?raw=true)
+
 Implement **findWeights** function which gets the name or path of the csv data file and returns the proper weights founded from the above formula as a Matrix object. Note that your function must work well with arbitrary csv files with the following assumption that the last column is the target (desired output) and the other columns are the inputs (features).
 ``` c++
  Matrix findWeights(const char*);
