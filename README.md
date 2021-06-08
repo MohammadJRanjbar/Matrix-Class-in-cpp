@@ -1,5 +1,5 @@
 # Matrix-Class-in-cpp
-this was a homework for dr.jahanshahi's Advanced Programming course and mr Amini (https://github.com/M-H-Amini) designed this homework
+This was a homework for dr.jahanshahi's Advanced Programming course designed by Mr. Amini (https://github.com/M-H-Amini).
 
 In this homework you're going to estimate an AP student's grade again! but in a different method using Linear Algebra! As you might have guessed, you will be doing this by using some matrices and functions defined on them like determinant, inverse, transpose , etc. There are some Questions in this serie. Remember to write their answer in your report file. You must not alter any of the given prototypes, but you're free to add whatever you want to both Matrix.cpp, Matrix.h and aphw2.cpp, aphw2.h files. By the way, you must write ALL of your codes in those 4 files! You must not alter the main.cpp again!
 # Matrix Class
